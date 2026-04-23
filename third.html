@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<style>
+    #inp{
+      accent-color:rgb(255, 166, 0);
+   transform: scale(1.7);
+   /* appearance: none; */
+   
+    }
+    .sec{
+        background-color: rgb(255, 166, 0);
+        
+    }
+</style>
+<body>
+    <section class="sec rounded-xl shadow-xl shadow-yellow-900 w-[600px] m-auto p-3 flex gap-5 mt-20 items-center"> 
+       <!-- <div> <input type="radio" id="inp"></div> -->
+       <div><img src="/foldermy/shose.png" alt="" class="h-50 rounded-lg">
+    <p class="font-bold ms-10 mt-2">Price:6000</p></div>
+        <div><input  type="number" id="qty" value="1" class="text-center w-30 outline-2 rounded-lg outline-black-600 " ></div>
+      <button onclick="order()" class="rounded-lg border-2 border-black p-1 w-20 hover:scale-[1.1] transition duration-300">Order</button> <!-- onclick hoga naky id -->
+      <div><p id="fi" class="font-bold ">Total:</p>
+       <p id="fii" class="font-bold ">Discount:</p>
+        <p id="fiii" class="font-bold ">Final amount:</p>
+</div>
+    </section>
+   <script>
+   
+    function order(){
+        let price=6000;
+        let quantity=Number(document.getElementById("qty").value);
+        let total=price*quantity;
+        let discount=0;
+        if(quantity>=4)
+    {
+        discount=total*0.1;
+    }
+    let final =total-discount;
+    document.getElementById("fi").innerText="Total: " +total;
+    document.getElementById("fii").innerText="Discount:  " +discount;
+    document.getElementById("fiii").innerText="Final amount: " +final;
+     alert("order placed successfully!");
+    }
+   
+   </script>
+
+
+
+</body>
+</html>
